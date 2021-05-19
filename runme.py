@@ -1,6 +1,5 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.action_chains import ActionChains
 from time import sleep
 
 # Set the WebDriver, use of Firefox() or Chrome() is also possible.
@@ -26,8 +25,6 @@ saveanimal_img = driver.find_element_by_xpath("//img[contains(@src,'https://pbs.
 g_parent = saveanimal_img.find_element_by_xpath("../..")
 gg_parent = g_parent.find_element_by_xpath("./..")
 button = gg_parent.find_element_by_class_name("btn")
-
-ActionChains(driver).move_to_element(button).perform()
 
 # Click only of button has not been clicked yet. Useful in case the IP from apiscraper has already been used. Without this we might be undoing votes.
 button_classes = button.get_attribute("class")
