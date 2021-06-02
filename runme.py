@@ -3,7 +3,7 @@ from selenium.webdriver.common.keys import Keys
 from time import sleep
 
 # Set the WebDriver, use of Firefox() or Chrome() is also possible.
-driver = webdriver.Safari()
+driver = webdriver.Chrome()
 driver.get("https://coinhunt.cc")
 
 # Get and click on all time best tab
@@ -21,7 +21,7 @@ show_more_button.click()
 sleep(4)
 
 # Find saveanimal img via the src tag. Then navigate to the grandparent which is the whole row. Then find vote button.
-saveanimal_img = driver.find_element_by_xpath("//img[contains(@src,'https://pbs.twimg.com/profile_images/1388944799986814983/3Qf8imVl_400x400.jpg')]")
+saveanimal_img = driver.find_element_by_xpath("//img[contains(@src,'https://i.ibb.co/g9P7Ct3/Logo-Project1-256.png')]")
 g_parent = saveanimal_img.find_element_by_xpath("../..")
 gg_parent = g_parent.find_element_by_xpath("./..")
 button = gg_parent.find_element_by_class_name("btn")
